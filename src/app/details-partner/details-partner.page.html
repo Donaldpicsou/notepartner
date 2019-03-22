@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home" ></ion-back-button>
+    </ion-buttons>
+    <ion-chip slot="start" outline="true"color="primary">
+      <ion-avatar>
+          <img src="../../assets/icon/favicon.png">
+      </ion-avatar>
+      <ion-label style="color:aliceblue;">Détails</ion-label>
+    </ion-chip>
+    <ion-buttons slot="end">
+      <ion-button slot="icon-only" (click)="showDetails()">
+        <ion-icon  style="color:aliceblue;" slot="end" name="more"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-title>Details</ion-title> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-no-padding ion-no-margin" >
+  <ion-card class="ion-no-padding ion-no-margin">
+    <img src="../../assets/icon/favicon.png">
+    <ion-card-header>
+      <ion-card-subtitle>Nom</ion-card-subtitle>
+      <ion-card-title>Prénoms</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+        <ion-icon name="pin" slot="start"></ion-icon>
+        <ion-label>ion-item in a card, icon left, button right</ion-label>
+        <ion-button fill="outline" slot="end">View</ion-button>
+      </ion-item>
+    <ion-card-content>
+        <i>
+        Si vous ne vous levez pas pour quelque chose, vous tomberez pour n'importe quoi." 
+        "Il faut reconnaître tout être humain, sans chercher à savoir s'il est blanc, noir, basané ou rouge; 
+        lorsque l'on envisage l'humanité comme une seule famille, il ne peut être question d'intégration ni de mariage inter-racial.
+        </i>
+
+    </ion-card-content>
+
+  </ion-card>
+</ion-content>

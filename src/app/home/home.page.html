@@ -1,62 +1,59 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
       Home
     </ion-title>
+    <ion-searchbar slot="end" placeholder="Find Partner" color="primary" showCancelButon cancelButtonText animated autocomplete="on">
+    </ion-searchbar>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="more">
+          <ion-select okText="Choose" cancelText="Cancel" value="Name">
+            <ion-select-option value="Name">Name</ion-select-option>
+            <ion-select-option value="domain">Domain</ion-select-option>
+            <ion-select-option value="Note">Note</ion-select-option>
+            <ion-select-option value="Near">Near</ion-select-option>
+          </ion-select>
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list lines="inset">
     <ion-list-header>
       <ion-label>Partners</ion-label>
     </ion-list-header>
-    <ion-list>
-      <ion-item-sliding (click)="logTest();dormir()">
-          <ion-item>
+      <ion-item-sliding *ngFor="let partner of partners; let id = index" (click)="openDetails(id)">
+          <ion-item detail="false" >
             <ion-avatar slot="start">
               <img src="../../assets/icon/favicon.png">
             </ion-avatar>
-            <ion-label style="display: block;">Tchakala VIP</ion-label>
-            <ion-label style="display: block;">Schreck</ion-label>
+            <ion-note slot="end" color="danger">
+              <ion-label>
+                  note :
+                  <ion-icon slot="start" name="star" color="warning"></ion-icon>
+                  <ion-icon slot="start" name="star" color="warning"></ion-icon>
+                  <ion-icon slot="start" name="star-half" color="warning"></ion-icon>
+              </ion-label>
+            </ion-note>
+            <ion-label text-wrap >
+              <h2>{{partner.name}}</h2>
+              <h4>{{partner.domain}}</h4>
+            </ion-label>
           </ion-item>
-        <ion-item-options side="start">
-          <ion-item-option (click)="unRead()"><ion-icon slot="start" name="call"></ion-icon></ion-item-option>
-          <ion-item-option color="primary" (click)="callPart()"><ion-icon slot="end" name="mail"></ion-icon></ion-item-option>
+        <ion-item-options side="end">
+          <ion-item-option (click)="unRead(partner)"><ion-icon slot="start" name="call"></ion-icon></ion-item-option>
+          <ion-item-option color="primary" (click)="callPart(partner)"><ion-icon slot="end" name="mail"></ion-icon></ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
-    </ion-list>
   </ion-list>
-
-<!--   <ion-list>
-      <ion-list-header color="tertiary">
-          <ion-label>Partner</ion-label>
-      </ion-list-header>
-    <ion-item-sliding>
-      <ion-item>
-        <ion-avatar slot="start">
-          <img src="../../assets/icon/favicon.png" />
-          <ion-label>Peperoni</ion-label>
-          <ion-label position="inline">Second...</ion-label>
-        <ion-item-options side="end">
-          <ion-item-option (click)="unRead()" >
-            book
-          </ion-item-option>
-          <ion-item-option (click)="callPart()">
-            <ion-icon name="call" slot="start">Call</ion-icon>
-          </ion-item-option>
-        </ion-item-options>
-      </ion-item>
-
-    </ion-item-sliding>
-
-  </ion-list> -->
-      
     <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button color="dark">
+      <ion-fab-button color="primary">
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
       <ion-fab-list side="top">
