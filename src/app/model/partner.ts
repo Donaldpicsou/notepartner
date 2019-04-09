@@ -3,10 +3,11 @@ export class Partner{
     name: string; 
     forname: string ;
     description: string ; 
-    numero: number;
+    tel: number;
     mail : string;
-    etoile: number[];
+    //adresse : string;
+    stars: number[];
     domain : string;
-    specialite: string;
+    speciality: string;
     picture: string ; 
 }

@@ -25,7 +25,7 @@ export class HomePage {
   }
 
   callPart(partner){
-    console.log("Appel du numéro"+partner.numero);
+    console.log("Appel du numéro"+partner.tel);
   }
 
   openDetails(id: any) {
