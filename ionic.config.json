@@ -1,5 +1,7 @@
 {
   "name": "notepartner",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
